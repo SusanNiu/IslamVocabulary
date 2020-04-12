@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddCardActivity">
+
+    //cancel button
+    <ImageView
+        android:id="@+id/cancelCard"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="33dp"
+        android:src="@drawable/cancel" />
+
+
+    //enter new questions and answers
+
+    <EditText
+        android:id="@+id/newQuestion"
+        android:layout_width="325dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="513dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Enter your new question here..." />
+
+    <EditText
+        android:id="@+id/newAnswer"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="355dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Enter the correct answer here..." />
+
+
+    //save button
+    <ImageView
+        android:id="@+id/saveCard"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="341dp"
+        android:layout_marginBottom="33dp"
+        android:src="@drawable/save" />
+
+
+
+
+</RelativeLayout>
