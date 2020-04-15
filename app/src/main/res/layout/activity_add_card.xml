@@ -39,13 +39,49 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="46dp"
-        android:layout_marginBottom="355dp"
+        android:layout_marginBottom="424dp"
         android:ems="10"
-        android:inputType="textMultiLine"
-        android:hint="Enter the correct answer here..." />
+        android:hint="Enter answer here here..."
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/newChoice1"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="342dp"
+        android:ems="10"
+        android:hint="Enter another choice here.."
+        android:inputType="textMultiLine" />
 
 
-    //save button
+
+    <EditText
+        android:id="@+id/newChoice2"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="47dp"
+        android:layout_marginBottom="250dp"
+        android:ems="10"
+        android:hint="Enter another choice here.."
+        android:inputType="textMultiLine" />
+
+    <EditText
+        android:id="@+id/newChoice3"
+        android:layout_width="328dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="161dp"
+        android:ems="10"
+        android:hint="Enter another choice here.."
+        android:inputType="textMultiLine" />
+
     <ImageView
         android:id="@+id/saveCard"
         android:layout_width="50dp"
@@ -55,7 +91,6 @@
         android:layout_marginEnd="341dp"
         android:layout_marginBottom="33dp"
         android:src="@drawable/save" />
-
 
 
 

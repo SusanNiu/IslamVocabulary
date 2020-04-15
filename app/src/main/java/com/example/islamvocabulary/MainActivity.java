@@ -1,14 +1,14 @@
 package com.example.islamvocabulary;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.snackbar.Snackbar;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -97,16 +97,21 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.editText).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String somestring =((TextView)findViewById(R.id.flashcard_question)).getText().toString();
-                String anotherstring = ((TextView)findViewById(R.id.flashcard_answer)).getText().toString();
+                String ques =((TextView)findViewById(R.id.flashcard_question)).getText().toString();
+                String answer = ((TextView)findViewById(R.id.flashcard_answer)).getText().toString();
+                String ch1 = ((TextView)findViewById(R.id.choice1)).getText().toString();
+                String ch2 = ((TextView)findViewById(R.id.choice2)).getText().toString();
+                String ch3 = ((TextView)findViewById(R.id.choice3)).getText().toString();
                 Intent intent = new Intent(MainActivity.this, AddCardActivity.class);
-                intent.putExtra("question",somestring);
-                intent.putExtra("answer",anotherstring);
+                intent.putExtra("question",ques);
+                intent.putExtra("answer",answer);
+                intent.putExtra("choice1",ch1);
+                intent.putExtra("choice2",ch2);
+                intent.putExtra("choice3",ch3);
                 MainActivity.this.startActivityForResult(intent, 100);
+                finish();
             }
         });
-
-
     }
 
 
@@ -118,12 +123,23 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == 100 && resultCode == RESULT_OK) {
             String newS1 = data.getExtras().getString("question");
             String newS2 = data.getExtras().getString("answer");
+            String newS3 = data.getExtras().getString("choice1");
+            String newS4 = data.getExtras().getString("choice2");
+            String newS5 = data.getExtras().getString("choice3");
+
             ((TextView) findViewById(R.id.flashcard_question)).setText(newS1);
             ((TextView) findViewById(R.id.flashcard_answer)).setText(newS2);
-            findViewById(R.id.choice1).setVisibility(View.INVISIBLE);
-            findViewById(R.id.choice2).setVisibility(View.INVISIBLE);
-            findViewById(R.id.choice3).setVisibility(View.INVISIBLE);
+            ((TextView) findViewById(R.id.choice1)).setText(newS3);
+            ((TextView) findViewById(R.id.choice2)).setText(newS4);
+            ((TextView) findViewById(R.id.choice3)).setText(newS5);
+
+//            findViewById(R.id.choice1).setVisibility(View.INVISIBLE);
+//            findViewById(R.id.choice2).setVisibility(View.INVISIBLE);
+//            findViewById(R.id.choice3).setVisibility(View.INVISIBLE);
+            Snackbar.make(findViewById(R.id.flashcard_question),
+                    "New Vocabulary created successfully!",
+                    Snackbar.LENGTH_SHORT)
+                    .show();
         }
     }
-
 }
